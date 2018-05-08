@@ -1,0 +1,11 @@
+{
+  "pages": [
+    "pages/today/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "气象小站",
+    "navigationBarTextStyle": "white"
+  }
+}

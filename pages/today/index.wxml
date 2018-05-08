@@ -1,0 +1,48 @@
+<!--index.wxml-->
+<view class="background">
+    <view class="weather-bg">
+        <view style="position: relative; width: 100%; height: auto">
+            <image class="weather-bg-img" src="{{weatherBg}}" mode="widthFix"></image>
+            <view class="weather-bg-transit"></view>
+        </view>
+    </view>
+    <view class="local" bindtap="reLocation"><text class="tip-icon i-weather-font icon-location"></text><text>{{locationName}}</text></view>
+    <view class="general">
+        <view class="wind item">
+            <text class="tip-icon i-weather-font icon-fengxiangdai"></text>
+            <text>{{windSpeed}}</text>
+        </view>
+        <view class="humidity item">
+            <text class="tip-icon i-weather-font icon-shidu"></text>
+            <text>{{humidity}}</text>
+        </view>
+        <view class="Ultraviolet item">
+            <text class="tip-icon i-weather-font icon-pm25"></text>
+            <text>{{pm25}}</text>
+        </view>
+        <view bindtap="takePicture">
+            <text class="tip-main-icon i-weather-font {{weatherIcon}}"></text>
+        </view>
+    </view>
+    <view class="today-temperature"  bindtap="takePicture">
+        <text>{{temperature}}</text>
+    </view>
+    <view class="today-forecast"><text>{{todayForeCast}}</text></view>
+    <view class="precipitation-view">
+        <canvas wx:if="{{isprecipitationShow}}" class="precipitation-canvas" canvas-id="precipitationCanvas" disable-scroll="true" bindtouchmove="touchMove"></canvas>
+        <image wx:if="{{!isprecipitationShow}}" src="{{precipitationImage}}" style="height:100%;width:100%;"/>
+    </view>
+    <scroll-view scroll-x="true" class="week-forecast">
+        <view class="item"  wx:for="{{week}}">
+            <view>
+                <text>{{item.day}}</text>
+            </view>
+            <view>
+                <text class="i-weather-font {{item.skycon}}"></text>
+            </view>
+            <view>
+                <text>{{item.temperature}}</text>
+            </view>
+        </view>
+    </scroll-view>
+</view>
